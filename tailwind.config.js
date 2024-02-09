@@ -8,8 +8,8 @@ export default {
     extend: {
       colors: {
         // Configure your color palette here
-        primary: "#5c6ac4",
-        btnColor: "rgb(249 115 22)",
+        timberGreen: "#183028",
+        mediumSpringBud: "#afe67f",
       },
       spacing: {
         kSpacing: "",
