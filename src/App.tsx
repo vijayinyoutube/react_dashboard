@@ -19,8 +19,16 @@ const App = () => {
               darkItemSelectedBg: "#284d4d",
               darkItemSelectedColor: "#afe67f",
               darkItemHoverColor: "#afe67f",
-
               darkItemHoverBg: "#122626",
+
+              activeBarBorderWidth:10,
+              horizontalItemBorderRadius:10,
+              colorBorder:"white",
+              colorBorderBg:"white",
+              borderRadiusOuter:10,
+              colorPrimaryBorder:"white",
+              colorBorderSecondary:"white",
+              colorInfoBorder:"red",
 
               itemBorderRadius: 0,
               itemMarginInline: 0,

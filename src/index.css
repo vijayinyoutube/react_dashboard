@@ -5,3 +5,7 @@
 .ant-menu-title-content {
   /*  */
 }
+
+.ant-menu-item-selected {
+  @apply border-l-2 border-mediumSpringBud
+}
