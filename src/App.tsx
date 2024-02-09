@@ -6,7 +6,8 @@ const App = () => {
     <div>
       <ConfigProvider
         theme={{
-          token: {},
+          token: {
+          },
           components: {
             Menu: {
               itemHoverBg: "#214040",
@@ -15,10 +16,17 @@ const App = () => {
               itemSelectedBg: "#284d4d",
               itemColor: "white",
 
+              darkItemColor:"white",
+              darkItemSelectedBg:"#284d4d",
+              darkItemSelectedColor:"#afe67f",
+              darkItemHoverColor:"#afe67f",
+
+              darkItemHoverBg:'#122626',
+
               itemBorderRadius: 0,
               itemMarginInline: 0,
               itemMarginBlock: 0,
-              itemHeight:45
+              itemHeight:55,
             },
           },
         }}

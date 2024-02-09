@@ -1,10 +1,11 @@
 import React from "react";
 import { useState } from "react";
 import {
-  UploadOutlined,
-  UserOutlined,
-  VideoCameraOutlined,
-} from "@ant-design/icons";
+  IoGrid,
+  IoSettingsSharp,
+  IoNewspaper,
+  IoPersonCircleSharp,
+} from "react-icons/io5";
 
 const AdminPanelService = () => {
   const [broken, setBroken] = useState(false);
@@ -14,20 +15,31 @@ const AdminPanelService = () => {
   const menuNames = ["Dashboard", "Contact", "Settings", "Profile"];
   const routes = ["/dashboard", "/contact", "/settings", "/profile"];
 
-  const items = [
-    UserOutlined,
-    VideoCameraOutlined,
-    UploadOutlined,
-    UserOutlined,
-  ].map((icon, index) => ({
-    key: String(index + 1),
-    icon: React.createElement(icon),
-    label: menuNames[index],
-    routes: routes[index],
-  }));
+
   const [collapsed, setCollapsed] = useState(false);
 
   const [open, setOpen] = useState(false);
+
+  const items = [
+    IoGrid,
+    IoNewspaper,
+    IoSettingsSharp,
+    IoPersonCircleSharp,
+  ].map((icon, index) => ({
+    key: String(index + 1),
+    icon: React.createElement(icon, {
+      className: `${collapsed?'w-full':'w-auto'} md:w-auto `,
+      style: { fontSize: "18px" },
+    }),
+    label: React.createElement(
+      "div",
+      {
+        className: "",
+      },
+      menuNames[index]
+    ),
+    routes: routes[index],
+  }));
 
   const showDrawer = () => {
     setOpen(true);

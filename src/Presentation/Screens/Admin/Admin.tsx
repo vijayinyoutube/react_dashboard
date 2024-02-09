@@ -2,7 +2,7 @@ import { Button, Layout } from "antd";
 import RouteGenerator from "../../Routes/Route";
 import { AiOutlineMenuFold, AiOutlineMenuUnfold } from "react-icons/ai";
 import AdminPanelService from "./Admin.service";
-import ResponsiveSlider from "../../Components/ResponsiveSlider";
+import ResponsiveSlider from "../../Components/SideMenu/ResponsiveSlider";
 
 const Admin = () => {
   const { Header, Content, Footer } = Layout;
@@ -40,23 +40,25 @@ const Admin = () => {
           setCurrentRoute={setCurrentRoute}
         />
         <Layout>
-          <Header style={{ padding: 0}} className="bg-transparent">
-            <div className="hidden sm:block">
-              {collapsed && (
+          <Header style={{ padding: 0 }} className="h-[55px] bg-transparent">
+            <div className={`hidden sm:block pl-2.5`}>
+              {
                 <Button
                   type="text"
                   icon={
                     collapsed ? (
-                      <AiOutlineMenuUnfold className="h-5 w-5 text-black " />
+                      <AiOutlineMenuUnfold className="h-5 w-5 text-black" />
                     ) : (
-                      <AiOutlineMenuFold className="ml-4 h-5 w-5 text-black " />
+                      <AiOutlineMenuFold
+                        className={` h-5 w-5 text-black ${collapsed ? "hidden" : "block md:hidden"}`}
+                      />
                     )
                   }
                   onClick={() => setCollapsed(!collapsed)}
                 />
-              )}
+              }
             </div>
-            <div className="block sm:hidden">
+            <div className={`block sm:hidden pl-2.5`}>
               <Button
                 type="text"
                 icon={
@@ -67,11 +69,6 @@ const Admin = () => {
                   )
                 }
                 onClick={() => showDrawer()}
-                style={{
-                  fontSize: "16px",
-                  width: 64,
-                  height: 64,
-                }}
               />
             </div>
           </Header>

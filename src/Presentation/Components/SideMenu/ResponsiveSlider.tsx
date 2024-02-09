@@ -1,9 +1,8 @@
-import { Menu, Drawer, Button, Typography, ConfigProvider } from "antd";
+import { Menu, Drawer, Button } from "antd";
 import Sider from "antd/es/layout/Sider";
 import { Dispatch, SetStateAction } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-
-const { Text } = Typography;
+import MenuHeader from "./MenuHeader";
 
 interface Props {
   collapsed?: boolean;
@@ -12,7 +11,7 @@ interface Props {
   items?: {
     key: string;
     icon: React.ReactElement;
-    label: string;
+    label: React.ReactElement;
     routes: string;
   }[];
   setBroken: Dispatch<SetStateAction<boolean>>;
@@ -44,7 +43,7 @@ const ResponsiveSlider = (props: Props) => {
     <div>
       {/* Slider Component : Web View */}
       <Sider
-        className="!bg-timberGreen hidden h-full sm:block"
+        className="hidden h-full !bg-timberGreen sm:block"
         collapsed={collapsed}
         reverseArrow={true}
         breakpoint="md"
@@ -62,12 +61,12 @@ const ResponsiveSlider = (props: Props) => {
           setCollapsed(collapsed);
         }}
       >
-        <div className="ml-8 mt-5 hidden md:block">
-          <Text className="text-white">TopWork</Text>
-        </div>
+        <MenuHeader />
         <Menu
-          className="bg-timberGreen pt-6"
+          className="bg-timberGreen md:pt-6 pt-0"
+          style={{ fontSize: "15px" }}
           mode="inline"
+          theme="dark"
           onClick={(e) => {
             if (broken) {
               setCollapsed(true);
