@@ -63,7 +63,7 @@ const ResponsiveSlider = (props: Props) => {
       >
         <MenuHeader />
         <Menu
-          className="bg-timberGreen md:pt-6 pt-0"
+          className="bg-timberGreen pt-0 md:pt-6"
           style={{ fontSize: "15px" }}
           mode="inline"
           theme="dark"

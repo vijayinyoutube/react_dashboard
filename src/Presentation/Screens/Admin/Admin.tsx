@@ -41,7 +41,7 @@ const Admin = () => {
         />
         <Layout>
           <Header style={{ padding: 0 }} className="h-[55px] bg-transparent">
-            <div className={`hidden sm:block pl-2.5`}>
+            <div className={`hidden pl-2.5 sm:block`}>
               {
                 <Button
                   type="text"
@@ -58,7 +58,7 @@ const Admin = () => {
                 />
               }
             </div>
-            <div className={`block sm:hidden pl-2.5`}>
+            <div className={`block pl-2.5 sm:hidden`}>
               <Button
                 type="text"
                 icon={

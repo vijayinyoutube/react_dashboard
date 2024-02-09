@@ -15,31 +15,27 @@ const AdminPanelService = () => {
   const menuNames = ["Dashboard", "Contact", "Settings", "Profile"];
   const routes = ["/dashboard", "/contact", "/settings", "/profile"];
 
-
   const [collapsed, setCollapsed] = useState(false);
 
   const [open, setOpen] = useState(false);
 
-  const items = [
-    IoGrid,
-    IoNewspaper,
-    IoSettingsSharp,
-    IoPersonCircleSharp,
-  ].map((icon, index) => ({
-    key: String(index + 1),
-    icon: React.createElement(icon, {
-      className: `${collapsed?'w-full':'w-auto'} md:w-auto `,
-      style: { fontSize: "18px" },
-    }),
-    label: React.createElement(
-      "div",
-      {
-        className: "",
-      },
-      menuNames[index]
-    ),
-    routes: routes[index],
-  }));
+  const items = [IoGrid, IoNewspaper, IoSettingsSharp, IoPersonCircleSharp].map(
+    (icon, index) => ({
+      key: String(index + 1),
+      icon: React.createElement(icon, {
+        className: `${collapsed ? "w-full" : "w-auto"} md:w-auto `,
+        style: { fontSize: "18px" },
+      }),
+      label: React.createElement(
+        "div",
+        {
+          className: "",
+        },
+        menuNames[index]
+      ),
+      routes: routes[index],
+    })
+  );
 
   const showDrawer = () => {
     setOpen(true);

@@ -4,7 +4,7 @@ const { Text, Title } = Typography;
 const MenuHeader = () => {
   return (
     <>
-      <div className="mx-6 mt-5 hidden md:block duration-300">
+      <div className="mx-6 mt-5 hidden duration-300 md:block">
         <Title
           style={{ padding: 0, margin: 0 }}
           level={3}
