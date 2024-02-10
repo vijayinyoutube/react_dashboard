@@ -1,12 +1,9 @@
 import { Typography } from "antd";
+import RespSideMenuType from "../../Types/Resp.SideMenu.Type";
 
 const { Text, Title } = Typography;
 
-interface Props {
-  collapsed?: boolean;
-}
-
-const MenuHeader = (props: Props) => {
+const MenuHeader = (props: RespSideMenuType) => {
   return (
     <>
       <div

@@ -49,7 +49,7 @@ const AdminPanelService = () => {
   ].map((icon, index) => ({
     key: String(index + 1),
     icon: React.createElement(icon, {
-      className: `${collapsed ? "w-full" : "w-auto"} md:w-auto `,
+      className: `w-auto`,
       style: { fontSize: "20px" },
     }),
     label: React.createElement(

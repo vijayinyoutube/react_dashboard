@@ -4,28 +4,29 @@ import { Dispatch, SetStateAction } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import MenuHeader from "./MenuHeader";
 import SideMenu from "./SideMenu";
+import RespSideMenuType from "../../Types/Resp.SideMenu.Type";
 
-interface Props {
-  collapsed?: boolean;
-  setCollapsed: React.Dispatch<React.SetStateAction<boolean>>;
-  broken?: boolean;
-  items?: {
-    key: string;
-    icon: React.ReactElement;
-    label: React.ReactElement;
-    routes: string;
-  }[];
-  setBroken: Dispatch<SetStateAction<boolean>>;
-  open: boolean;
-  setOpen: Dispatch<SetStateAction<boolean>>;
-  showDrawer: () => void;
-  closeDrawer: () => void;
-  currentRoute: string;
-  routes: string[];
-  setCurrentRoute: Dispatch<SetStateAction<string>>;
-}
+// interface Props {
+//   collapsed?: boolean;
+//   setCollapsed: React.Dispatch<React.SetStateAction<boolean>>;
+//   broken?: boolean;
+//   items?: {
+//     key: string;
+//     icon: React.ReactElement;
+//     label: React.ReactElement;
+//     routes: string;
+//   }[];
+//   setBroken: Dispatch<SetStateAction<boolean>>;
+//   open: boolean;
+//   setOpen: Dispatch<SetStateAction<boolean>>;
+//   showDrawer: () => void;
+//   closeDrawer: () => void;
+//   currentRoute: string;
+//   routes: string[];
+//   setCurrentRoute: Dispatch<SetStateAction<string>>;
+// }
 
-const ResponsiveSlider = (props: Props) => {
+const ResponsiveSlider = (props: RespSideMenuType) => {
   const {
     collapsed,
     setCollapsed,
@@ -33,7 +34,7 @@ const ResponsiveSlider = (props: Props) => {
     items,
     setBroken,
     open,
-    closeDrawer,
+    closeDrawer = () => {},
     routes,
     setCurrentRoute,
   } = props;
@@ -50,15 +51,15 @@ const ResponsiveSlider = (props: Props) => {
         width={250}
         collapsedWidth="55"
         onBreakpoint={(brokenVal) => {
-          console.log("Broken:", brokenVal);
+          console.log("broken:", brokenVal);
           if (!brokenVal) {
             closeDrawer();
           }
-          setBroken(brokenVal);
-          setCollapsed(brokenVal);
+          setBroken!(brokenVal);
+          setCollapsed!(brokenVal);
         }}
         onCollapse={(collapsed, type) => {
-          setCollapsed(collapsed);
+          setCollapsed!(collapsed);
         }}
       >
         <SideMenu
