@@ -1,10 +1,17 @@
 import { Typography } from "antd";
 
 const { Text, Title } = Typography;
-const MenuHeader = () => {
+
+interface Props {
+  collapsed?: boolean;
+}
+
+const MenuHeader = (props: Props) => {
   return (
     <>
-      <div className="mx-6 mt-5 hidden duration-300 md:block">
+      <div
+        className={`mx-6 mt-5  duration-300 ${props.collapsed ? "hidden" : "block sm:hidden md:block"}`}
+      >
         <Title
           style={{ padding: 0, margin: 0 }}
           level={3}

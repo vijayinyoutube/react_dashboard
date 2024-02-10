@@ -2,7 +2,7 @@ import { Button, Layout } from "antd";
 import RouteGenerator from "../../Routes/Route";
 import { AiOutlineMenuFold, AiOutlineMenuUnfold } from "react-icons/ai";
 import AdminPanelService from "./Admin.service";
-import ResponsiveSlider from "../../Components/SideMenu/ResponsiveSlider";
+import ResponsiveSlider from "../../Components/Resp.SideMenu/ResponsiveSlider";
 
 const Admin = () => {
   const { Header, Content, Footer } = Layout;

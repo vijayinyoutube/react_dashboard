@@ -2,10 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
-.ant-menu-title-content {
-  /*  */
+.ant-menu-item-selected {
+  @apply border-l-2 border-mediumSpringBud;
 }
 
-.ant-menu-item-selected {
-  @apply border-l-2 border-mediumSpringBud
+.ant-drawer .ant-drawer-body {
+  padding: 0;
 }

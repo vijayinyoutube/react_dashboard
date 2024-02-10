@@ -3,6 +3,7 @@ import Sider from "antd/es/layout/Sider";
 import { Dispatch, SetStateAction } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import MenuHeader from "./MenuHeader";
+import SideMenu from "./SideMenu";
 
 interface Props {
   collapsed?: boolean;
@@ -37,7 +38,6 @@ const ResponsiveSlider = (props: Props) => {
     setCurrentRoute,
   } = props;
   const navigate = useNavigate();
-  const location = useLocation();
 
   return (
     <div>
@@ -61,53 +61,33 @@ const ResponsiveSlider = (props: Props) => {
           setCollapsed(collapsed);
         }}
       >
-        <MenuHeader />
-        <Menu
-          className="bg-timberGreen pt-0 md:pt-6 "
-          style={{ fontSize: "15px"}}
-          mode="inline"
-          theme="dark"
-          onClick={(e) => {
-            if (broken) {
-              setCollapsed(true);
-            }
-            navigate(items ? items[parseInt(e.key) - 1].routes : "/");
-            setCurrentRoute(items ? items[parseInt(e.key) - 1].routes : "/");
-          }}
-          defaultSelectedKeys={[String(routes.indexOf(location.pathname) + 1)]}
+        <SideMenu
           items={items}
+          setCollapsed={setCollapsed}
+          broken={broken}
+          setCurrentRoute={setCurrentRoute}
+          routes={routes}
+          closeDrawer={closeDrawer}
         />
       </Sider>
 
       {/* Drawer Component : Mobile View */}
       <Drawer
         width={225}
-        className="!bg-[#001529] !text-white"
-        title="Basic Drawer"
+        className="!bg-timberGreen !text-white"
         placement={"left"}
         closable={false}
         onClose={closeDrawer}
         open={open}
       >
-        <div className="">
-          {items?.map((item) => {
-            return (
-              <div className="">
-                <Button
-                  icon={item.icon}
-                  size="large"
-                  className="text-sm my-1 ml-0  w-full border-0 text-left text-white hover:bg-blue-600 hover:!text-white"
-                  onClick={() => {
-                    navigate(item.routes);
-                    closeDrawer();
-                  }}
-                >
-                  {item.label}
-                </Button>
-              </div>
-            );
-          })}
-        </div>
+        <SideMenu
+          items={items}
+          setCollapsed={setCollapsed}
+          broken={broken}
+          setCurrentRoute={setCurrentRoute}
+          routes={routes}
+          closeDrawer={closeDrawer}
+        />
       </Drawer>
     </div>
   );
