@@ -7,18 +7,10 @@ export default {
         timberGreen: "#183028",
         mediumSpringBud: "#afe67f",
       },
-      spacing: {
-        kSpacing: "",
-        kLargeSpacing: "",
-        kSmallSpacing: "",
-      },
-    },
-    fontSize: {
-      kSmallFont: "",
-      kBodyDescFont: "",
-      kHeadingFont: "",
-      kTitleFont: "",
-      kSubTitleFont: "",
+      height:{
+        sideMenuLogoutHeightLg:'calc(100vh - 550px);',
+        sideMenuLogoutHeightMd:'calc(100vh - 450px);'
+      }
     },
   },
   plugins: [],

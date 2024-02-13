@@ -59,6 +59,7 @@ const SideMenu = (props: RespSideMenuType) => {
         mode="inline"
         theme="dark"
         onClick={(e) => {
+          closeDrawer!();
           navigate(items ? items[parseInt(e.key) - 1].routes : "/");
           setCurrentRoute!(items ? items[parseInt(e.key) - 1].routes : "/");
         }}

@@ -7,7 +7,7 @@ const SideMenuIcon = (props: RespSideMenuType) => {
 
   return (
     <>
-      <div className={`hidden pl-2.5 sm:block lg:hidden `}>
+      <div className={`hidden sm:block lg:hidden `}>
         {
           <Button
             type="text"
@@ -16,7 +16,7 @@ const SideMenuIcon = (props: RespSideMenuType) => {
                 <AiOutlineMenuUnfold className="h-5 w-5 text-black" />
               ) : (
                 <AiOutlineMenuFold
-                  className={` h-5 w-5 text-black ${collapsed ? "hidden" : "block md:hidden"}`}
+                  className={` h-5 w-5 text-black ${collapsed ? "hidden" : "hidden sm:block"}`}
                 />
               )
             }

@@ -11,5 +11,5 @@
 }
 
 .content-container {
-  height: calc(100vh - 550px);
+  @apply md:h-sideMenuLogoutHeightLg sm:h-sideMenuLogoutHeightMd h-sideMenuLogoutHeightLg;
 }

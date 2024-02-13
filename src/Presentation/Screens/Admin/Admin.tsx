@@ -39,11 +39,11 @@ const Admin = () => {
           setCollapsed={setCollapsed}
           setCurrentRoute={setCurrentRoute}
         />
-        <Layout>
-          <Header style={{ padding: 0 }} className=" bg-red-100">
+        <Layout className="bg-white">
+          <Header style={{ padding: 0 }} className="h-auto bg-transparent">
             <PageTitle collapsed={collapsed} setCollapsed={setCollapsed} showDrawer={showDrawer}/>
           </Header>
-          <Content className="p-4">
+          <Content className="py-3 px-5">
             <RouteGenerator />
           </Content>
           <Footer style={{ textAlign: "center" }} className="bottom-0">
