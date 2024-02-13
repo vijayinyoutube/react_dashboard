@@ -59,7 +59,7 @@ const AdminPanelService = () => {
       },
       menuNames[index]
     ),
-    routes: routes[index],
+    routes: routes[index] ?? "/dashboard",
   }));
 
   const showDrawer = () => {

@@ -9,3 +9,7 @@
 .ant-drawer .ant-drawer-body {
   padding: 0;
 }
+
+.content-container {
+  height: calc(100vh - 550px);
+}

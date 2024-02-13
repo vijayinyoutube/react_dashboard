@@ -1,5 +1,5 @@
 import { Typography } from "antd";
-import RespSideMenuType from "../../Types/Resp.SideMenu.Type";
+import { RespSideMenuType } from "../../Types/Resp.SideMenu.Type";
 
 const { Text, Title } = Typography;
 

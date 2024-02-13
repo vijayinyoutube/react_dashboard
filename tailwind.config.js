@@ -4,7 +4,6 @@ export default {
   theme: {
     extend: {
       colors: {
-        // Configure your color palette here
         timberGreen: "#183028",
         mediumSpringBud: "#afe67f",
       },

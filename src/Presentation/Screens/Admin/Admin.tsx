@@ -1,8 +1,8 @@
-import { Button, Layout } from "antd";
+import {   Layout } from "antd";
 import RouteGenerator from "../../Routes/Route";
-import { AiOutlineMenuFold, AiOutlineMenuUnfold } from "react-icons/ai";
 import AdminPanelService from "./Admin.service";
 import ResponsiveSlider from "../../Components/Resp.SideMenu/ResponsiveSlider";
+import PageTitle from "./Components/PageTitle";
 
 const Admin = () => {
   const { Header, Content, Footer } = Layout;
@@ -40,37 +40,8 @@ const Admin = () => {
           setCurrentRoute={setCurrentRoute}
         />
         <Layout>
-          <Header style={{ padding: 0 }} className="h-[55px] bg-transparent">
-            <div className={`hidden pl-2.5 sm:block`}>
-              {
-                <Button
-                  type="text"
-                  icon={
-                    collapsed ? (
-                      <AiOutlineMenuUnfold className="h-5 w-5 text-black" />
-                    ) : (
-                      <AiOutlineMenuFold
-                        className={` h-5 w-5 text-black ${collapsed ? "hidden" : "block md:hidden"}`}
-                      />
-                    )
-                  }
-                  onClick={() => setCollapsed(!collapsed)}
-                />
-              }
-            </div>
-            <div className={`block pl-2.5 sm:hidden`}>
-              <Button
-                type="text"
-                icon={
-                  collapsed ? (
-                    <AiOutlineMenuUnfold className="h-5 w-5 text-black " />
-                  ) : (
-                    <AiOutlineMenuFold className="h-5 w-5 text-black " />
-                  )
-                }
-                onClick={() => showDrawer()}
-              />
-            </div>
+          <Header style={{ padding: 0 }} className=" bg-red-100">
+            <PageTitle collapsed={collapsed} setCollapsed={setCollapsed} showDrawer={showDrawer}/>
           </Header>
           <Content className="p-4">
             <RouteGenerator />

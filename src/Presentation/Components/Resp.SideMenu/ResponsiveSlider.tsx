@@ -1,10 +1,7 @@
-import { Menu, Drawer, Button } from "antd";
+import {  Drawer } from "antd";
 import Sider from "antd/es/layout/Sider";
-import { Dispatch, SetStateAction } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
-import MenuHeader from "./MenuHeader";
 import SideMenu from "./SideMenu";
-import RespSideMenuType from "../../Types/Resp.SideMenu.Type";
+import { RespSideMenuType } from "../../Types/Resp.SideMenu.Type";
 
 // interface Props {
 //   collapsed?: boolean;
@@ -38,7 +35,6 @@ const ResponsiveSlider = (props: RespSideMenuType) => {
     routes,
     setCurrentRoute,
   } = props;
-  const navigate = useNavigate();
 
   return (
     <div>
