@@ -1,5 +1,5 @@
 import { Route, Routes } from "react-router-dom";
-import DashboardScreen from "../Screens/Dashboard/UI/Dashboard";
+import DashboardScreen from "../Screens/Dashboard/View/Dashboard";
 import Contracts from "../Screens/Contracts/Contracts";
 import Clients from "../Screens/Clients/Clients";
 import Settings from "../Screens/Settings/Settings";

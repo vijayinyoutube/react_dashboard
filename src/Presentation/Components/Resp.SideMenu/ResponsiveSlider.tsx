@@ -44,7 +44,7 @@ const ResponsiveSlider = (props: RespSideMenuType) => {
         collapsed={collapsed}
         reverseArrow={true}
         breakpoint="md"
-        width={250}
+        width={225}
         collapsedWidth="55"
         onBreakpoint={(brokenVal) => {
           console.log("broken:", brokenVal);
@@ -54,7 +54,7 @@ const ResponsiveSlider = (props: RespSideMenuType) => {
           setBroken!(brokenVal);
           setCollapsed!(brokenVal);
         }}
-        onCollapse={(collapsed, type) => {
+        onCollapse={(collapsed) => {
           setCollapsed!(collapsed);
         }}
       >
