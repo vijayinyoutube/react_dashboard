@@ -43,7 +43,7 @@ const Admin = () => {
           <Header style={{ padding: 0 }} className="h-auto bg-transparent">
             <PageTitle collapsed={collapsed} setCollapsed={setCollapsed} showDrawer={showDrawer}/>
           </Header>
-          <Content className="py-3 px-5">
+          <Content className="lg:py-3 px-4">
             <RouteGenerator />
           </Content>
           <Footer style={{ textAlign: "center" }} className="bottom-0">

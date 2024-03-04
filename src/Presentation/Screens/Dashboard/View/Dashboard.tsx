@@ -18,29 +18,29 @@ const DashboardScreen = () => {
 
   return (
     <div className="h-full">
-      <Flex className="gap-5">
+      <Flex className="gap-3 lg:gap-5 grid lg:grid-rows-1 grid-rows-2 grid-flow-col">
         {DashBrdAnytData.map((item) => {
           return (
-            <Flex className="h-20 w-full items-center justify-start rounded-md border !p-3">
+            <Flex className="h-20 w-full items-center justify-start rounded-md border p-2 lg:!p-3">
               <Flex>
                 <Avatar
-                  size={45}
+                size={42}
                   icon={statIconList[item.icon]}
-                  className="w-full bg-mediumSpringBud/50"
+                  className=" bg-mediumSpringBud/50 "
                 />
               </Flex>
               <Flex vertical className="ml-3 w-full gap-1">
-                <Flex className="justify-between ">
-                  <Text className="text-xl font-semibold leading-none">
+                <Flex className="justify-between">
+                  <Text className="font-semibold leading-none text-xl">
                     {item.title}
                   </Text>
                   <Text
-                    className={` text-normal ${item.metric == "green" ? "text-green-500" : "text-red-500"}`}
+                    className={` lg:text-normal text-xs  ${item.metric == "green" ? "text-green-500" : "text-red-500"}`}
                   >
                     {item.stat}
                   </Text>
                 </Flex>
-                <Text className="text-oldSilver text-xs font-light leading-none">
+                <Text className="text-xs font-light leading-none text-oldSilver">
                   {item.subTitle}
                 </Text>
               </Flex>
