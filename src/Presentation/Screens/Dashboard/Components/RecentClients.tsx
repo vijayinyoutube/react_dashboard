@@ -1,4 +1,4 @@
-import { Badge, Divider, Flex, Tag, Typography } from "antd";
+import {  Divider, Flex, Tag, Typography } from "antd";
 const { Text } = Typography;
 
 const RecentClients = ({ RecentClientData }: { RecentClientData: any[] }) => {
