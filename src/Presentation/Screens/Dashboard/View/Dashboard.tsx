@@ -1,4 +1,4 @@
-import { Avatar, Flex, Segmented } from "antd";
+import { Avatar, Flex } from "antd";
 import { Typography } from "antd";
 import { MdOutlineAttachMoney, MdWork, MdTimelapse } from "react-icons/md";
 import { IoPaperPlane } from "react-icons/io5";
