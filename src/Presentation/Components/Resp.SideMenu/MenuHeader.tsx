@@ -7,7 +7,7 @@ const MenuHeader = (props: RespSideMenuType) => {
   return (
     <>
       <div
-        className={`mx-6 mt-5  duration-300 ${props.collapsed ? "hidden" : "block sm:hidden md:block"}`}
+        className={`mx-6 mt-3  duration-300 ${props.collapsed ? "hidden" : "block sm:hidden md:block"}`}
       >
         <Title
           style={{ padding: 0, margin: 0 }}

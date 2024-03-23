@@ -6,6 +6,7 @@ export default {
       colors: {
         timberGreen: "#183028",
         mediumSpringBud: "#afe67f",
+        oldSilver:'#adadad'
       },
       height:{
         sideMenuLogoutHeightLg:'calc(100vh - 550px);',

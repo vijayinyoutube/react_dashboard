@@ -7,7 +7,7 @@ const SideMenuIcon = (props: RespSideMenuType) => {
 
   return (
     <>
-      <div className={`hidden sm:block lg:hidden `}>
+      <div className={`hidden pr-1.5 lg:hidden bg-red-100`}>
         {
           <Button
             type="text"
@@ -24,7 +24,7 @@ const SideMenuIcon = (props: RespSideMenuType) => {
           />
         }
       </div>
-      <div className={`block pl-2.5 sm:hidden`}>
+      <div className={`block pr-1.5 sm:hidden`}>
         <Button
           type="text"
           icon={
