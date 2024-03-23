@@ -1,4 +1,4 @@
-import {   Layout } from "antd";
+import { Layout } from "antd";
 import RouteGenerator from "../../Routes/Route";
 import AdminPanelService from "./Admin.service";
 import ResponsiveSlider from "../../Components/Resp.SideMenu/ResponsiveSlider";
@@ -23,7 +23,7 @@ const Admin = () => {
   } = AdminPanelService();
   return (
     <div>
-      <Layout className="h-screen" hasSider={true}>
+      <Layout style={{ minHeight: "100vh" }} hasSider={true}>
         {/* Responsive slider */}
         <ResponsiveSlider
           open={open}
@@ -41,12 +41,16 @@ const Admin = () => {
         />
         <Layout className="bg-white">
           <Header style={{ padding: 0 }} className="h-auto bg-transparent">
-            <PageTitle collapsed={collapsed} setCollapsed={setCollapsed} showDrawer={showDrawer}/>
+            <PageTitle
+              collapsed={collapsed}
+              setCollapsed={setCollapsed}
+              showDrawer={showDrawer}
+            />
           </Header>
-          <Content className="lg:py-3 px-4">
+          <Content className="px-4 lg:py-3">
             <RouteGenerator />
           </Content>
-          <Footer style={{ textAlign: "center" }} className="bottom-0">
+          <Footer style={{ textAlign: "center" }} className="bottom-0 mt-2">
             TopWork ©{new Date().getFullYear()} Created by VIJAY R
           </Footer>
         </Layout>

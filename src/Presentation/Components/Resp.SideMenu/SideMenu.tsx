@@ -49,7 +49,13 @@ const SideMenu = (props: RespSideMenuType) => {
           navigate(items ? items[parseInt(e.key) - 1].routes : "/");
           setCurrentRoute!(items ? items[parseInt(e.key) - 1].routes : "/");
         }}
-        defaultSelectedKeys={[String(routes!.indexOf(location.pathname) + 1)]}
+        defaultSelectedKeys={[
+          location.pathname != "/"
+            ? routes!.indexOf(location.pathname) == -1
+              ? "1"
+              : String(routes!.indexOf(location.pathname) + 1)
+            : "1",
+        ]}
         items={items}
       />
       <div className="content-container"></div>

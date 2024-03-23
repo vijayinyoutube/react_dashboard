@@ -1,13 +1,18 @@
-import { Avatar, Flex } from "antd";
+import { Avatar, Flex, Segmented } from "antd";
 import { Typography } from "antd";
 import { MdOutlineAttachMoney, MdWork, MdTimelapse } from "react-icons/md";
 import { IoPaperPlane } from "react-icons/io5";
 import DashboardService from "./Dashboard.service";
+import ChartsData from "../Components/ChartsData";
+import ActiveProjects from "../Components/ActiveProjects";
+import Maps from "../Components/Maps";
+import RecentClients from "../Components/RecentClients";
 
 const { Text } = Typography;
 
 const DashboardScreen = () => {
-  const { DashBrdAnytData } = DashboardService();
+  const { DashBrdAnytData, ActiveProjectDetails, chartData, RegionData,RecentClientData } =
+    DashboardService();
 
   const statIconList = [
     <MdOutlineAttachMoney color="black" />,
@@ -18,20 +23,21 @@ const DashboardScreen = () => {
 
   return (
     <div className="h-full">
-      <Flex className="gap-3 lg:gap-5 grid lg:grid-rows-1 grid-rows-2 grid-flow-col">
+      <Flex className="grid grid-flow-col grid-rows-2 gap-3 lg:grid-rows-1 lg:gap-5">
+        {/* Stats Cards */}
         {DashBrdAnytData.map((item) => {
           return (
             <Flex className="h-20 w-full items-center justify-start rounded-md border p-2 lg:!p-3">
               <Flex>
                 <Avatar
-                size={42}
+                  size={42}
                   icon={statIconList[item.icon]}
                   className=" bg-mediumSpringBud/50 "
                 />
               </Flex>
               <Flex vertical className="ml-3 w-full gap-1">
                 <Flex className="justify-between">
-                  <Text className="font-semibold leading-none text-xl">
+                  <Text className="text-xl font-semibold leading-none">
                     {item.title}
                   </Text>
                   <Text
@@ -47,6 +53,14 @@ const DashboardScreen = () => {
             </Flex>
           );
         })}
+      </Flex>
+      <Flex className="mt-5 flex-col gap-3 md:flex-row lg:gap-5">
+        <ChartsData chartData={chartData} />
+        <ActiveProjects data={ActiveProjectDetails} />
+      </Flex>
+      <Flex className="mt-5 flex-col gap-3 md:flex-row lg:gap-5 ">
+        <Maps RegionData={RegionData} />
+        <RecentClients RecentClientData={RecentClientData} />
       </Flex>
     </div>
   );
