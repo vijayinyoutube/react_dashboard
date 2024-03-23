@@ -29,8 +29,8 @@ const Maps = ({ RegionData }: { RegionData: any[] }) => {
             </Flex>
           </Flex>
         </Flex>
-        <Flex>
-          <img src={map} className="" />
+        <Flex className="rounded-md">
+          <img src={map} className="rounded-md" />
         </Flex>
       </Flex>
     </Flex>
